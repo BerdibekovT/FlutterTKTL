@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sup/router.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,9 +28,11 @@ class HomePage extends StatelessWidget {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         actions: [
-          Switch(
-            value: false,
-            onChanged: (bool value) {},
+          TextButton( 
+            onPressed: (){
+              context.push("/columnrow");
+            },
+            child: Text(""),
           ),
         ],
       ),
@@ -36,7 +40,6 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Top Buttons Grid
             GridView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -47,7 +50,7 @@ class HomePage extends StatelessWidget {
                 childAspectRatio: 2.5,
               ),
               children: [
-                _buildGridButton(Icons.phone_android, "Default Theme", Colors.teal),
+                _buildGridButton(Icons.phone_android, "Default Theme", Colors.teal, on),
                 _buildGridButton(Icons.apps, "Full Apps", Colors.deepPurple),
                 _buildGridButton(Icons.language, "Integration", Colors.green),
                 _buildGridButton(Icons.dashboard, "Dashboard", Colors.orange),
@@ -59,7 +62,7 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 children: [
                   _buildThemeTile(
-                      icon: Icons.cut, title: "File Manager", screens: "Theme 1 Screens", color: Colors.orange),
+                      icon: Icons.cut, title: "File Manager", screens: "Theme 1 Screens", color: Colors.orange,),
                   _buildThemeTile(
                       icon: Icons.build, title: "Exercise Tips", screens: "Theme 2 Screens", color: Colors.teal),
                   _buildThemeTile(
@@ -76,8 +79,6 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
-  // Function to build grid buttons
   Widget _buildGridButton(IconData icon, String label, Color color) {
     return Container(
       decoration: BoxDecoration(
@@ -98,7 +99,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // Function to build theme tiles
   Widget _buildThemeTile(
       {required IconData icon, required String title, required String screens, required Color color}) {
     return ListTile(
@@ -110,7 +110,6 @@ class HomePage extends StatelessWidget {
       subtitle: Text(screens),
       trailing: Icon(Icons.arrow_forward, color: Colors.grey),
       onTap: () {
-        // Add action on tap
       },
     );
   }

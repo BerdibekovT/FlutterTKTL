@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:sup/main.dart';
 import 'package:sup/pages/columnrow.dart';
 import 'package:go_router/go_router.dart';
 
-final _router = GoRouter(
+final router = GoRouter(
+  initialLocation: "/",
   routes: [
     GoRoute(
-      path: '/',
-      builder: (context, state) => MyApp(),
-    ),
+      path: "/",
+      builder: (context, state)=> HomePage(),
+      ),
     GoRoute(
-      path: '/columnRow',
-      builder: (context, state) => ColumnRow()
-    )
-  ],
+      path: "/columnrow",
+      builder: (context, state)=> const ColumnRow(),
+     ),
+  ]
 );
-
-class MyApp extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: _router,
-    );
-  }
-}
