@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
             onPressed: (){
               context.push("/columnrow");
             },
-            child: Text(""),
+            child: Text("column"),
           ),
         ],
       ),
@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                 childAspectRatio: 2.5,
               ),
               children: [
-                _buildGridButton(Icons.phone_android, "Default Theme", Colors.teal, on),
+                _buildGridButton(Icons.phone_android, "Default Theme", Colors.teal,),
                 _buildGridButton(Icons.apps, "Full Apps", Colors.deepPurple),
                 _buildGridButton(Icons.language, "Integration", Colors.green),
                 _buildGridButton(Icons.dashboard, "Dashboard", Colors.orange),
