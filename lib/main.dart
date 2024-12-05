@@ -9,9 +9,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      routerConfig: router,
     );
   }
 }
@@ -61,6 +61,7 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
+                  TextButton(onPressed: (){}, child: Text("Columnrow"),),
                   _buildThemeTile(
                       icon: Icons.cut, title: "File Manager", screens: "Theme 1 Screens", color: Colors.orange,),
                   _buildThemeTile(
