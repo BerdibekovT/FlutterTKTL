@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ColumnRow extends StatelessWidget {
+  static const String route = '/columnrow';
   const ColumnRow({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
+    return const Scaffold(
         body:Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,7 +19,6 @@ class ColumnRow extends StatelessWidget {
             )
           ],
         )
-      )
-    );
+      );
   }
 }
