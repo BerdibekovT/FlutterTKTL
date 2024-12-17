@@ -6,8 +6,11 @@ class ColumnRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body:Column(
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Columns"),
+        ),
+        body:const Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
