@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sup/pages/carspage.dart';
 import 'package:sup/pages/columnrow.dart';
 import 'package:sup/pages/settingspage.dart';
 import 'package:sup/pages/newspage.dart';
@@ -25,6 +26,9 @@ class _HomePageState extends State<HomePage> {
       case 2:
         context.go('${ColumnRow.route}');
         break;
+      case 3:
+        context.go('${CarsPage.route}');
+        break;
     }
     setState(() {
       currentIndex = index;
@@ -42,7 +46,8 @@ class _HomePageState extends State<HomePage> {
           destinations: const [
             NavigationDestination(icon: Icon(Icons.newspaper), label: 'News'),
             NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
-            NavigationDestination(icon: Icon(Icons.air), label: 'Column')
+            NavigationDestination(icon: Icon(Icons.air), label: 'Column'),
+            NavigationDestination(icon: Icon(Icons.car_repair), label: 'Carspage',),
           ]),
     );
   }

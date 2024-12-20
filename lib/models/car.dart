@@ -11,6 +11,6 @@ class Cars{
     required this.probeg,
   });
 
-
+  double get probegInMiles => probeg*0.621;
   
 }

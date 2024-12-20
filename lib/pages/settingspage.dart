@@ -20,7 +20,7 @@ class _MyWidgetState extends State<SettingsPage> {
       appBar: AppBar(
         title: Text("Cars"),
       ),
-      body: Text(myCar1 as String),
+      
     );
   }
 }
